@@ -1,4 +1,4 @@
-# Documentación del Proyecto OLAP para "Correos de Costa Rica"
+# Documentación del Proyecto OLAP para "Transporte Yuba"
 
 ## Diseño y Construcción de la Base de Datos y el Cubo OLAP
 ### Base de Datos Transaccional
