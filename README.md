@@ -1,20 +1,28 @@
-# Documentación del Proyecto OLAP para transporte
+# Documentación del Proyecto OLAP para "Correos de Costa Rica"
 
 ## Diseño y Construcción de la Base de Datos y el Cubo OLAP
-- **Base de Datos Transaccional:** Diseñada en SQL Server con tablas para clientes, vehículos, conductores, rutas y servicios de transporte.
-- **Cubo OLAP:** Facilita el análisis multidimensional con dimensiones como Cliente, Vehículo, Conductor, Ruta y Fecha/Hora.
+### Base de Datos Transaccional
+- **Estructuración:** Creación de tablas para gestionar clientes, vehículos, conductores, rutas y servicios, asegurando relaciones y restricciones de integridad para mantener la consistencia de los datos.
+- **Normalización:** Aplicación de normas de normalización hasta la tercera forma normal para reducir redundancias y mejorar la integridad de los datos.
+
+### Cubo OLAP
+- **Desarrollo:** Definición de dimensiones como Cliente, Vehículo, Conductor, Ruta y Tiempo. Configuración de medidas como tiempo de servicio, costos y satisfacción del cliente.
+- **Implementación:** Utilización de SQL Server Analysis Services para construir el cubo OLAP, permitiendo análisis complejos y reportes dinámicos.
 
 ## Arquitectura del Portal Web
-- Desarrollado en HTML, CSS, JavaScript y C#, ofrece diferentes vistas basadas en el rol del usuario, integrando análisis a través del cubo OLAP.
+- **Front-end:** Implementación con HTML5, CSS3 y JavaScript para una interfaz responsiva. Uso de frameworks como Bootstrap para el diseño.
+- **Back-end:** Desarrollo en C# con ASP.NET para gestionar las solicitudes, procesar datos y conectar con el cubo OLAP.
+- **Seguridad:** Implementación de autenticación y autorización para diferentes roles de usuarios, asegurando que cada usuario acceda solo a la información permitida.
 
 ## Funcionalidades por Tipo de Usuario
-- **Administradores:** acceso completo al cubo y poder modificar o actualizar datos.
-- **Gerente:** consultas predefinidas, visualizar reportes gráficos y descargar informes.
-- **Analista de datos:** Acceso a crear sus propios análisis, generar nuevos reportes y exportar datos.
+- **Administradores:** Acceso completo al cubo y poder modificar o actualizar datos.
+- **Operadores:** Acceso a consultas predefinidas, visualizar reportes gráficos y descargar informes.
+- **Clientes:** Acceso a crear sus propios análisis, generar nuevos reportes y exportar datos.
 
 ## Respaldos y Configuraciones TCP/IP
-- Regular backup via SQL Server scripts. TCP/IP settings optimized for performance and security.
+- **Respaldos:** Programación de respaldos automáticos diarios y respaldos completos semanales. Estrategias de recuperación ante desastres implementadas para minimizar la pérdida de datos.
+- **Configuración de Red:** Detalles sobre la configuración de TCP/IP que incluyen ajustes en el servidor para optimizar la conectividad y la seguridad.
 
 ## Problemas y Soluciones
-- **Desafío:** Errores al construir el cubo OLAP y dificultades para integrarlo con el portal web debido a falta de experiencia técnica.
-- **Solución:** Incrementamos nuestra investigación en técnicas de OLAP y utilizamos recursos educativos especializados para fortalecer nuestro entendimiento y habilidades en la integración de tecnologías, lo que resultó en una implementación exitosa y optimizada.
+- **Desafío:** Errores durante la implementación del cubo OLAP debido a configuraciones inadecuadas y falta de experiencia en integración con el portal web.
+- **Solución:** Se consultaron múltiples fuentes y se realizó un intenso ciclo de pruebas y ajustes que culminó con una implementación exitosa.
