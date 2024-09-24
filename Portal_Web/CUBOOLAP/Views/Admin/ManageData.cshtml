@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CUBOOLAP.Models.ServiciosTransporte>
+
+@{
+    ViewData["Title"] = "Servicios de Transporte";
+}
+
+<h2>Servicios de Transporte</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Servicio</th>
+            <th>ID Cliente</th>
+            <th>ID Vehículo</th>
+            <th>ID Conductor</th>
+            <th>ID Ruta</th>
+            <th>Fecha Salida</th>
+            <th>Fecha Llegada</th>
+            <th>Estado</th>
+            <th>Costo</th>
+            <th>Peso de la Carga</th>
+            <th>Descripción de la Carga</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID_Servicio</td>
+                <td>@item.ID_Cliente</td>
+                <td>@item.ID_Vehiculo</td>
+                <td>@item.ID_Conductor</td>
+                <td>@item.ID_Ruta</td>
+                <td>@item.Fecha_Salida.ToShortDateString()</td>
+                <td>@item.Fecha_Llegada.ToShortDateString()</td>
+                <td>@item.Estado</td>
+                <td>@item.Costo.ToString("C")</td>
+                <td>@item.Peso_Carga</td>
+                <td>@item.Descripcion_Carga</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID_Servicio" class="btn btn-warning">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

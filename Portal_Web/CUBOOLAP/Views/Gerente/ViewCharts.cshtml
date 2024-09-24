@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Gráficos de Transporte";
+}
+
+<h2>Gráficos de Transporte</h2>
+
+<!-- Botón para regresar al Panel del Gerente -->
+<a href="@Url.Action("ManagerDashboard", "Gerente")" class="btn btn-outline-secondary mb-3">Atrás</a>
+
+<!-- Canvas para el gráfico -->
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<!-- Cargar el script de Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    // Obtener los datos de los ViewBag para crear el gráfico
+    var clienteIds = @Html.Raw(Json.Serialize(ViewBag.ClienteIds));
+    var costos = @Html.Raw(Json.Serialize(ViewBag.Costos));
+
+    // Crear el gráfico
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: clienteIds,
+            datasets: [{
+                label: 'Costo del Transporte',
+                data: costos,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

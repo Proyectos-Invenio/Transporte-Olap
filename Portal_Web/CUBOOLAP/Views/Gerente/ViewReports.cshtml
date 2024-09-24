@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CUBOOLAP.Models.ServiciosTransporte>
+
+@{
+    ViewData["Title"] = "Buscar Reportes";
+}
+
+<h2>Buscar Reportes de Cubo Olap Transporte</h2>
+
+<!-- Botón para regresar al Panel del Gerente -->
+<a href="@Url.Action("ManagerDashboard", "Gerente")" class="btn btn-outline-secondary mb-3">Atrás</a>
+
+<!-- Formulario de búsqueda por estado -->
+<form method="get" asp-action="SearchByStatus">
+    <div class="form-group">
+        <label for="estado">Seleccionar Estado:</label>
+        <select name="estado" class="form-control">
+            <option value="Completado">Completado</option>
+            <option value="En camino">En camino</option>
+            <option value="Pendiente">Pendiente</option>
+        </select>
+    </div>
+    <p> </p>
+    <button type="submit" class="btn btn-secondary">Buscar por Estado</button>
+</form>
+
+<hr />
+
+<!-- Formulario de búsqueda por ID del servicio -->
+<form method="get" asp-action="SearchByServiceId">
+    <div class="form-group">
+        <label for="idServicio">ID del Servicio:</label>
+        <input type="number" name="idServicio" class="form-control" />
+    </div>
+    <p> </p>
+    <button type="submit" class="btn btn-secondary">Buscar por ID Servicio</button>
+</form>
+
+<hr />
+
+<h2>Reportes de Cubo Olap Transporte</h2>
+
+<table class="table table-bordered table-striped table-hover table-sm">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID Servicio</th>
+            <th>ID Cliente</th>
+            <th>ID Vehículo</th>
+            <th>ID Conductor</th>
+            <th>ID Ruta</th>
+            <th>Fecha Salida</th>
+            <th>Fecha Llegada</th>
+            <th>Estado</th>
+            <th>Costo</th>
+            <th>Peso de la Carga</th>
+            <th>Descripción de la Carga</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID_Servicio</td>
+                <td>@item.ID_Cliente</td>
+                <td>@item.ID_Vehiculo</td>
+                <td>@item.ID_Conductor</td>
+                <td>@item.ID_Ruta</td>
+                <td>@item.Fecha_Salida.ToShortDateString()</td>
+                <td>@item.Fecha_Llegada.ToShortDateString()</td>
+                <td>@item.Estado</td>
+                <td>@item.Costo.ToString("C")</td>
+                <td>@item.Peso_Carga</td>
+                <td>@item.Descripcion_Carga</td>
+            </tr>
+        }
+    </tbody>
+</table>

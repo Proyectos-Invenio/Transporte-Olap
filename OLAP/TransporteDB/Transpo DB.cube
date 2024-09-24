@@ -1,0 +1,369 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="02b87a97-e19c-408c-9723-f8a167490d55" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Transpo DB</ID>
+  <Name>Transpo DB</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="7b9eabbf-f287-4ba9-82e8-b6c906d4a014">
+      <ID>Vehiculos</ID>
+      <Name>Vehiculos</Name>
+      <DimensionID>Vehiculos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="e6b078a3-a14e-4ae7-8e95-399a6dfe89a8">
+          <AttributeID>ID Vehiculo</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="2d0261b7-de43-4038-b956-7e86e10cf555">
+      <ID>Servicios Transporte</ID>
+      <Name>Servicios Transporte</Name>
+      <DimensionID>Servicios Transporte</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="0a172cda-f5f6-40f6-91ba-250d8f7878e5">
+          <AttributeID>ID Servicio</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cb30670c-27ec-431e-980c-b46376a48013">
+          <AttributeID>ID Cliente</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9adc3a55-60d7-44ec-9cee-4b75e0a5beee">
+          <AttributeID>ID Vehiculo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3903ab4c-c3a3-4e45-ba61-00bcc47e6a07">
+          <AttributeID>ID Ruta</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e27942d2-3fc0-4c6b-a257-dba032d7bb6f">
+          <AttributeID>ID Conductor</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="80d5581d-4fd4-4ba5-b393-7255872a094b">
+      <ID>Clientes</ID>
+      <Name>Clientes</Name>
+      <DimensionID>Clientes</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ef2577a7-8d84-4263-95f6-f4d6d13a3aa2">
+          <AttributeID>ID Cliente</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="ffe6149a-63a8-43f7-b028-82940ff09358">
+      <ID>Rutas</ID>
+      <Name>Rutas</Name>
+      <DimensionID>Rutas</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="413fd445-f823-4326-b0c4-d54fd7d49ca2">
+          <AttributeID>ID Ruta</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="566b32ef-16fb-4b29-aa1f-0f34fb17f6ff">
+      <ID>Conductores</ID>
+      <Name>Conductores</Name>
+      <DimensionID>Conductores</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="9f245f6b-eef6-461c-9402-9917e317c34d">
+          <AttributeID>ID Conductor</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="7f530165-e20e-44a4-a0a4-155a8b10f930">
+      <ID>Vehiculos</ID>
+      <Name>Vehiculos</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="1d2fdfe9-4141-4e5a-b23a-f3a06addd7bc">
+          <ID>Capacidad</ID>
+          <Name>Capacidad</Name>
+          <Source dwd:design-time-name="caac8fba-b2bc-4a1f-8e36-1ff40bfa95a7">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9f7db1e3-d8f8-42e7-83c1-1b0e458f6541">
+              <TableID>dbo_Vehiculos</TableID>
+              <ColumnID>Capacidad</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="66e45b07-0f55-4751-9758-06eeacfe1d65">
+          <ID>Recuento Vehiculos</ID>
+          <Name>Recuento Vehiculos</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="3c20fb9a-f325-43bb-b55e-9240de90806f">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="64fe73c3-4d88-453b-bc71-8bb1b38cf886">
+              <TableID>dbo_Vehiculos</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="fbc24a03-7d43-4cd9-9ef7-e4f28141f745">
+          <CubeDimensionID>Vehiculos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="dfaa6581-72b8-4255-b26f-a9b0022aa347">
+              <AttributeID>ID Vehiculo</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f5cf2516-942f-47ca-9b70-163e7a768af4">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d2118dca-0b5e-4375-876a-8f05741440f4">
+                    <TableID>dbo_Vehiculos</TableID>
+                    <ColumnID>ID_Vehiculo</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="6169f805-86e9-46e4-b709-2521f52b1842">
+      <ID>Servicios Transporte</ID>
+      <Name>Servicios Transporte</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="f613d4ce-6d86-4aa8-bd3c-4af2243ff1f3">
+          <ID>Costo</ID>
+          <Name>Costo</Name>
+          <Source dwd:design-time-name="bf0e03e8-e9fd-477e-b693-2484c9bfc60b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="84f47b39-bc33-479a-9a9d-286f55ceab3f">
+              <TableID>dbo_Servicios_Transporte</TableID>
+              <ColumnID>Costo</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="bed63ab0-bd52-4256-aeb2-3a25c70a2273">
+          <ID>Peso Carga</ID>
+          <Name>Peso Carga</Name>
+          <Source dwd:design-time-name="95c30072-8354-42d0-a95d-e49936125773">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b72cb17c-8c70-4802-9ee1-bf6708dbac84">
+              <TableID>dbo_Servicios_Transporte</TableID>
+              <ColumnID>Peso_Carga</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3518ab32-6461-4558-8e52-1f1a0f8d4968">
+          <ID>Recuento Servicios Transporte</ID>
+          <Name>Recuento Servicios Transporte</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="8f7998a5-cdac-4bfd-bd33-96580dd18853">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="66b2ce3d-5fdd-41ca-84cc-5ede2aef0684">
+              <TableID>dbo_Servicios_Transporte</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="a5cb9e11-52e9-4471-b5af-f86d80538c4e">
+          <CubeDimensionID>Servicios Transporte</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="216a90aa-77ea-426c-a4bc-47b70bd30569">
+              <AttributeID>ID Servicio</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="4a86a7f9-64dd-407e-a3a9-406f23867785">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="202478f7-af4d-4261-b1e7-f8c42b1f3a4d">
+                    <TableID>dbo_Servicios_Transporte</TableID>
+                    <ColumnID>ID_Servicio</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b3e304ec-9e86-423e-b886-fd57657d3a77">
+          <CubeDimensionID>Clientes</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="77a4634a-3a64-4689-abeb-caee3c7e2d8c">
+              <AttributeID>ID Cliente</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="fd0c5cb5-177f-4398-b752-68281ed57834">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f9a80863-2782-4145-a19c-51b532e05ea5">
+                    <TableID>dbo_Servicios_Transporte</TableID>
+                    <ColumnID>ID_Cliente</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d6863b40-816b-48f6-8ae1-0b2b87ed9d66">
+          <CubeDimensionID>Vehiculos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="374d8f06-5fa2-42d6-b440-436bb7c63df5">
+              <AttributeID>ID Vehiculo</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="193c9136-8692-47b5-bc0f-8298f6e8a021">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3efd41b1-e0f6-445c-ad33-3f261f7aa891">
+                    <TableID>dbo_Servicios_Transporte</TableID>
+                    <ColumnID>ID_Vehiculo</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b7ba3198-8d6d-4b1a-97eb-e0811fe8813e">
+          <CubeDimensionID>Rutas</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="985d30fb-3311-41b7-bb0f-4a3ee5a5ff3b">
+              <AttributeID>ID Ruta</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e0f7f58c-6c41-4585-9467-4972a7c9b7c2">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5e98e6a8-6f9d-4472-8693-c6699c2084fb">
+                    <TableID>dbo_Servicios_Transporte</TableID>
+                    <ColumnID>ID_Ruta</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9e16639a-1923-4c0b-aa5e-50d1bfdb33e8">
+          <CubeDimensionID>Conductores</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="bdfd4d4e-08f3-4798-8442-b8262bc21b4c">
+              <AttributeID>ID Conductor</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="645368f2-f2e9-455b-a142-2a1991497378">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="95e8dc1b-0b4b-4ac9-b549-78c0127183cc">
+                    <TableID>dbo_Servicios_Transporte</TableID>
+                    <ColumnID>ID_Conductor</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="1639c893-3fb6-4f81-98d2-d200ab92adb2">
+      <ID>Rutas</ID>
+      <Name>Rutas</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="3d4461d8-e58d-4c10-ae98-784a9cc47e62">
+          <ID>Distancia</ID>
+          <Name>Distancia</Name>
+          <Source dwd:design-time-name="f35dd641-009b-46c8-9a42-9f0cb3b6dcaf">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6205c26f-2b22-4443-be61-3aecbed64b26">
+              <TableID>dbo_Rutas</TableID>
+              <ColumnID>Distancia</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="098c9326-931c-4d5d-bef7-bbacc33d9560">
+          <ID>Recuento Rutas</ID>
+          <Name>Recuento Rutas</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="89b9dabd-db70-4008-a51b-51dc9fb91992">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="5c3d716d-ffb1-4166-b3da-544385c2c855">
+              <TableID>dbo_Rutas</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="41ce5430-4f78-4ad4-ab41-bd0fae401e0b">
+          <CubeDimensionID>Rutas</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="81112ee5-8eb2-4b91-a7a4-b3248f227a48">
+              <AttributeID>ID Ruta</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6fbe2633-02bf-4622-92da-3c2505ebb4c1">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a258d52e-691c-4810-bc70-2197a86d6f8d">
+                    <TableID>dbo_Rutas</TableID>
+                    <ColumnID>ID_Ruta</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="8f5426ba-2051-47d1-9fa5-ecc226a5aa97">
+    <DataSourceViewID>Transpo DB</DataSourceViewID>
+  </Source>
+</Cube>

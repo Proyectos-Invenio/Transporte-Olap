@@ -1,0 +1,53 @@
+﻿@model CUBOOLAP.Models.ServiciosTransporte
+
+@{
+    ViewData["Title"] = "Editar Servicio de Transporte";
+}
+
+<h2>Editar Servicio de Transporte</h2>
+
+<form asp-action="EditData">
+    <div class="form-group mb-3">
+        <label asp-for="ID_Cliente" class="form-label"></label>
+        <input asp-for="ID_Cliente" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="ID_Vehiculo" class="form-label"></label>
+        <input asp-for="ID_Vehiculo" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="ID_Conductor" class="form-label"></label>
+        <input asp-for="ID_Conductor" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="ID_Ruta" class="form-label"></label>
+        <input asp-for="ID_Ruta" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Fecha_Salida" class="form-label"></label>
+        <input asp-for="Fecha_Salida" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Fecha_Llegada" class="form-label"></label>
+        <input asp-for="Fecha_Llegada" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Estado" class="form-label"></label>
+        <input asp-for="Estado" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Costo" class="form-label"></label>
+        <input asp-for="Costo" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Peso_Carga" class="form-label"></label>
+        <input asp-for="Peso_Carga" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Descripcion_Carga" class="form-label"></label>
+        <input asp-for="Descripcion_Carga" class="form-control" />
+    </div>
+    <input type="hidden" asp-for="ID_Servicio" />
+
+    <button type="submit" class="btn btn-outline-secondary">Guardar</button>
+</form>

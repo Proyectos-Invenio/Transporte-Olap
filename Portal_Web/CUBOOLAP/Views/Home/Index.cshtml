@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1>Bienvenido al Sistema de Administración CUBO OLAP</h1>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>Hola, @User.Identity.Name!</p>
+
+    @if (ViewBag.IsAdmin)
+    {
+        <h3>Panel de Administrador</h3>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a href="/Admin/Dashboard" class="btn btn-secondary btn-lg">Ir al Panel de Administrador</a>
+        </div>
+    }
+
+    @if (ViewBag.IsGerente)
+    {
+        <h3>Panel de Gerente</h3>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a href="/Gerente/ManagerDashboard" class="btn btn-secondary btn-lg">Ir al Panel de Gerente</a>
+        </div>
+    }
+
+    @if (ViewBag.IsAnalista)
+    {
+        <h3>Panel de Analista de Datos</h3>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a href="/Analista/AnalystDashboard" class="btn btn-secondary btn-lg">Ir al Panel de Analista</a>
+        </div>
+    }
+}
+else
+{
+    <p>Bienvenido al Sistema de Administración CUBO OLAP. Para continuar, por favor:</p>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="/Identity/Account/Login" class="btn btn-secondary btn-lg">Iniciar sesión</a>
+        <a href="/Identity/Account/Register" class="btn btn-secondary btn-lg">Registrarse</a>
+    </div>
+}

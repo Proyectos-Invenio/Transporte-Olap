@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Panel de Analista de Datos";
+}
+
+<h2>Panel de Analista de Datos</h2>
+<p>Bienvenido Analista. Aquí puedes crear y analizar reportes.</p>
+
+<!-- Formulario de búsqueda por estado del servicio -->
+<form id="form-grafico" method="get">
+    <div class="form-group">
+        <label for="estado">Seleccionar Estado:</label>
+        <select id="estado" name="estado" class="form-control">
+            <option value="Completado">Completado</option>
+            <option value="En camino">En camino</option>
+            <option value="Pendiente">Pendiente</option>
+        </select>
+    </div>
+    <p></p>
+    <button type="button" id="btn-generar-grafico" class="btn btn-secondary">Generar Gráfico por Estado</button>
+</form>
+
+<hr />
+
+<!-- Formulario de búsqueda por ID del servicio -->
+<form method="get" asp-action="SearchByServiceId">
+    <div class="form-group">
+        <label for="idServicio">ID del Servicio:</label>
+        <input type="number" name="idServicio" class="form-control" />
+    </div>
+    <p></p>
+    <button type="submit" class="btn btn-secondary">Reporte por ID Servicio</button>
+
+</form>
+
+<h3>Gráficos de Transporte</h3>
+<canvas id="chartClientes" width="400" height="200"></canvas>
+
+<!-- Script para generar gráfico con Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.getElementById('btn-generar-grafico').addEventListener('click', function () {
+        // Obtener el estado seleccionado
+        var estadoSeleccionado = document.getElementById('estado').value;
+
+        // Obtener datos del servidor
+        fetch(`/Analista/GenerateChart?estado=${encodeURIComponent(estadoSeleccionado)}`)
+            .then(response => response.json())
+            .then(data => {
+                // Verifica si hay datos
+                if (data.length > 0) {
+                    var ctx = document.getElementById('chartClientes').getContext('2d');
+
+                    // Destruir el gráfico previo si ya existe
+                    if (window.myChart) {
+                        window.myChart.destroy();
+                    }
+
+                    window.myChart = new Chart(ctx, {
+                        type: 'bar',  // Puedes cambiar el tipo de gráfico si lo deseas (line, pie, etc.)
+                        data: {
+                            labels: data.map(item => 'Cliente ' + item.cliente),
+                            datasets: [{
+                                label: 'Costo Total por Cliente',
+                                data: data.map(item => item.totalCosto),
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    alert("No hay datos disponibles para el estado seleccionado.");
+                }
+            })
+            .catch(error => console.error("Error al obtener datos del servidor:", error));
+    });
+</script>
